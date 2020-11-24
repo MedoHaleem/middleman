@@ -6,6 +6,7 @@ import slick from 'slick-carousel';
 import anime from 'animejs/lib/anime';
 import AOS from 'aos';
 import LazyLoad from "lazyload"
+import Form from "./components/form";
 
 $(document).ready(function() {
   AOS.init({disable: 'mobile'});
