@@ -3,8 +3,12 @@
 section
   .wrap
     h1.space--both-1= lorem.sentence
-    .formatted-content
-      = lorem.paragraphs(5)
-      div id="react_form"
-      / Test image with lazyload options
-      /= image_lazy(dato.homepage.image, {w: 1920}, [[960, 480], [1080, 720], [1536, 1024], [1920, 1536]])
+    - dato.products.each do |product|
+      .product_card
+        h1 =product.title
+        p.price = "$#{product.price}"
+        p = lorem.sentence
+        p
+        =button_to "View Product", "http://localhost:4567/products/#{product.slug}"
+
+   

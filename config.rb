@@ -110,6 +110,13 @@ LOCALES.each do |locale|
       "/localizable/index.html",
       locale: locale
 
+    dato.products.each do |product|
+      proxy "#{prefix}/products/#{product.slug}/index.html",
+        "/templates/product.html",
+        locals: { product: product },
+        locale: locale
+    end
+
     proxy "#{prefix}/contact/index.html",
       "templates/contact_page.html",
       locals: { locale: I18n.locale },
