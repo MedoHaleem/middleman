@@ -27,7 +27,6 @@ class Form extends Component {
         <input
           type="text"
           value={this.state.value}
-          onChange={this.handleChange}
         />
       </form>
     );

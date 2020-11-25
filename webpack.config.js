@@ -42,7 +42,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: [[
+              '@babel/preset-env',
+              {
+                targets: {
+                  esmodules: true
+                }
+              }
+            ], '@babel/preset-react']
           }
         }
       },
@@ -81,43 +88,43 @@ module.exports = {
             multipass: true,
             pretty: true,
             plugins: [
-              {cleanupAttrs: true},
-              {cleanupEnableBackground: true},
-              {cleanupIDs: true},
-              {cleanupListOfValues: true},
-              {cleanupNumericValues: true},
-              {collapseGroups: true},
-              {convertColors: true},
-              {convertPathData: true},
-              {convertShapeToPath: true},
-              {convertStyleToAttrs: true},
-              {convertTransform: true},
-              {mergePaths: true},
-              {moveElemsAttrsToGroup: true},
-              {moveGroupAttrsToElems: true},
+              { cleanupAttrs: true },
+              { cleanupEnableBackground: true },
+              { cleanupIDs: true },
+              { cleanupListOfValues: true },
+              { cleanupNumericValues: true },
+              { collapseGroups: true },
+              { convertColors: true },
+              { convertPathData: true },
+              { convertShapeToPath: true },
+              { convertStyleToAttrs: true },
+              { convertTransform: true },
+              { mergePaths: true },
+              { moveElemsAttrsToGroup: true },
+              { moveGroupAttrsToElems: true },
               //{removeAttrs: {attrs: '(fill|stroke)'}}, // if you don't want any color from the original SVG - see also the removeStyleElement option
-              {removeComments: true},
-              {removeDesc: false}, // for usability reasons
-              {removeDimensions: true},
-              {removeDoctype: true},
-              {removeEditorsNSData: true},
-              {removeEmptyAttrs: true},
-              {removeEmptyContainers: true},
-              {removeEmptyText: true},
-              {removeHiddenElems: true},
-              {removeMetadata: true},
-              {removeNonInheritableGroupAttrs: true},
-              {removeRasterImages: true}, // bitmap! you shall not pass!
-              {removeScriptElement: true}, // shoo, javascript!
+              { removeComments: true },
+              { removeDesc: false }, // for usability reasons
+              { removeDimensions: true },
+              { removeDoctype: true },
+              { removeEditorsNSData: true },
+              { removeEmptyAttrs: true },
+              { removeEmptyContainers: true },
+              { removeEmptyText: true },
+              { removeHiddenElems: true },
+              { removeMetadata: true },
+              { removeNonInheritableGroupAttrs: true },
+              { removeRasterImages: true }, // bitmap! you shall not pass!
+              { removeScriptElement: true }, // shoo, javascript!
               //{removeStyleElement: true}, // if you really really want to remove ANY <style> tag from the original SVG, watch out as it could be too much disruptive - see also the removeAttrs option
-              {removeTitle: false}, // for usability reasons
-              {removeUnknownsAndDefaults: true},
-              {removeUnusedNS: true},
-              {removeUselessDefs: true},
-              {removeUselessStrokeAndFill: true},
-              {removeViewBox: false},
-              {removeXMLProcInst: true},
-              {sortAttrs: true}
+              { removeTitle: false }, // for usability reasons
+              { removeUnknownsAndDefaults: true },
+              { removeUnusedNS: true },
+              { removeUselessDefs: true },
+              { removeUselessStrokeAndFill: true },
+              { removeViewBox: false },
+              { removeXMLProcInst: true },
+              { sortAttrs: true }
             ]
           }
         },

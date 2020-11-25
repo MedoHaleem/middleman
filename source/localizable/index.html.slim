@@ -2,7 +2,7 @@
 /  == dato_meta_tags(page)
 section
   .wrap
-    h1.space--both-1= lorem.sentence
+  br
     - dato.products.each do |product|
       .product_card
         h1 =product.title
@@ -11,4 +11,4 @@ section
         p
         =button_to "View Product", "http://localhost:4567/products/#{product.slug}"
 
-   
+        

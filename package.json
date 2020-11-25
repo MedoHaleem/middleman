@@ -48,6 +48,8 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.12.7",
+    "@commercelayer/js-auth": "^2.0.2",
+    "@commercelayer/js-sdk": "^3.0.2",
     "lazyload": "^2.0.0-rc.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
