@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { getPrice } from "../cl"
+import { getPriceAndStock } from "../cl"
 
 class Label extends Component {
     constructor() {
         super();
 
         this.state = {
-            value: ""
+            value: {}
         };
     }
     componentDidMount() {
-        getPrice(document.getElementById("SKU").value).then(price => this.setState({ value: price })).catch(e => console.log(e.message))
+        getPriceAndStock(document.getElementById("SKU").value).then(price => this.setState({ value: price })).catch(e => console.log(e.message))
     }
 
 
     render() {
         return (
             <div>
-                <h1>{this.state.value}</h1>
+                <h1>Price: {this.state.value.price}</h1>
+                <h1> Stock: {this.state.value.stock}</h1>
             </div>
         );
     }

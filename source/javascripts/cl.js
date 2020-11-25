@@ -20,12 +20,12 @@ const getToken = async () => {
     }
 }
 
-export const getPrice = async (code) => {
+export const getPriceAndStock = async (code) => {
     await getToken()
-    const sku = await Sku.includes('prices').findBy({ code: code })
+    const sku = await Sku.includes('stockItems').includes('prices').findBy({ code: code })
     const prices = sku.prices().toArray()
-    console.log(prices)
-    return prices[0].amountFloat
+    const stock = sku.stockItems().toArray()
+    return {price: prices[0].amountFloat, stock: stock[0].quantity}
 }
 
 
