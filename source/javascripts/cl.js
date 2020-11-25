@@ -2,10 +2,10 @@ import { initCLayer, Sku, ShippingCategory } from '@commercelayer/js-sdk';
 import { getIntegrationToken } from '@commercelayer/js-auth';
 let token;
 let initialized = false;
-const endpoint = 'https://cantiere-creativo.commercelayer.io'
+const endpoint = process.env.ENDPOINT
 const config = {
-    clientId: 'uSlqPoAGKE8HUNfd5HVqCVO3viFWNZFxRRZdH-CteWY',
-    clientSecret: 'tnwTGdbgOozJ2tvjXr33R0kd19qmVjD2Ja59fpIsPRU',
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECERET,
     endpoint: endpoint
 }
 const getToken = async () => {

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require("autoprefixer");
+const Dotenv = require('dotenv-webpack');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
@@ -75,6 +76,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
