@@ -11,9 +11,7 @@ class Label extends Component {
         };
     }
     componentDidMount() {
-        console.log(document.getElementById("SKU").value) 
-        console.log("I should be called")
-        getPrice().then(token => this.setState({ value: token })).catch(e => console.log(e.message))
+        getPrice(document.getElementById("SKU").value).then(price => this.setState({ value: price })).catch(e => console.log(e.message))
     }
 
 
